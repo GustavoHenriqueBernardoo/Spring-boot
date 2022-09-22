@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Conditionals</title>
-    </head>
-    <body>
-                
-    </body>
+  <head>
+    <title>Conditionals</title>
+  </head>
+  <body>
+    <p th:text="${sales > 50 ? 'Sales were Good' : 'Sales were Bad!'}"></p>
+    <div th:switch="${product}">
+      <p th:case="'chair'">50</p>
+      <p th:case="'tv'">150</p>
+      <p th:case="*">no match</p>
+    </div>
+  </body>
 </html>
