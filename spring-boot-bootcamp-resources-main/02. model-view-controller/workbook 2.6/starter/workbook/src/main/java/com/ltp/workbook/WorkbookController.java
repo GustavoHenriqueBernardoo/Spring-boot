@@ -7,9 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class WorkbookController {
 
-    @GetMapping(value="/")
+    @GetMapping(value = "/")
     public String getMethodName(Model model) {
+        model.addAttribute("budget", 5000);
+        model.addAttribute("make", "Ford");
         return "dealership";
     }
-    
+
 }
