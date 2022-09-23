@@ -9,7 +9,8 @@ public class WorkbookController {
 
     @GetMapping(value = "/")
     public String getSign(Model model) {
-        model.addAttribute("speed", 65);
+
+        model.addAttribute("speed", 70);
         return "sign";
     }
 
