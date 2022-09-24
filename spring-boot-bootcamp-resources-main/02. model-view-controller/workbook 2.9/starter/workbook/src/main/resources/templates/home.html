@@ -2,15 +2,15 @@
 <html>
     <head>
         <title>Tabs</title>
+        <link rel="stylesheet" th:href="@{/stylesheet.css}" />
     </head>
     <body>
-        <div>
-            <a>Home</a>
-            <a>Away</a>
+        <div class="topnav">
+            <a class="active" th:href="@{/}">Home</a>
+            <a th:href="@{/away}">Away</a>
         </div>
-        <div>
+        <div class="container">
             <h1>HOME</h1>
         </div>
-
     </body>
 </html>

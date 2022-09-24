@@ -9,7 +9,7 @@ public class GradeController {
 
   @GetMapping("/grades")
   public String getGrades(Model model) {
-    Grade grade = new Grade("John Doe", "Potions", "C-");
+    Grade grade = new Grade("John Doe", "Potions", "-C");
     model.addAttribute("grade", grade);
     return "grades";
   }
