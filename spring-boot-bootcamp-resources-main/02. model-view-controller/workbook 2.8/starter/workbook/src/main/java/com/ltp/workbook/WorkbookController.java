@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class WorkbookController {
-    @GetMapping(value="/")
+    @GetMapping(value = "/")
     public String getLandingPage() {
         return "page";
     }
-    
+
 }
