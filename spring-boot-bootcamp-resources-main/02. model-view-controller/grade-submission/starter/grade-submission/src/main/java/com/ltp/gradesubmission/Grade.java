@@ -12,6 +12,9 @@ public class Grade {
     this.score = score;
   }
 
+  public Grade() {
+  }
+
   public String getName() {
     return name;
   }
