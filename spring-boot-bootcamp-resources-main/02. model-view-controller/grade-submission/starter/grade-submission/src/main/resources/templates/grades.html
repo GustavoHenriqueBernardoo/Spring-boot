@@ -22,6 +22,8 @@
                     <td th:text="${grade.name}"></td>
                     <td th:text="${grade.subject}"></td>
                     <td th:text="${grade.score}"></td>
+                    <!-- th:href = "@{/url endpoint(parameter = value)}": GET request to relative path while passing in a parameter. -->
+                    <td><a class="update" role="button" th:href="@{/(id = ${grade.id})}">Update</a></td>
                 </tr>
             </table>
         </div>
