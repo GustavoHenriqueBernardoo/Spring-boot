@@ -5,7 +5,8 @@
     </head>
     <body>
         <h2>Sales Records</h2>
-        <table border="bold" width="600">
+
+        <table border="solid" width="100%">
             <tr>
                 <th>Item</th>
                 <th>Revenue</th>
@@ -13,11 +14,11 @@
                 <th>Profit</th>
             </tr>
 
-            <tr th:each="record: ${records}" th:style="${record.revenue - record.cost >= 0 ? 'background: green' : 'background: red' }">
-                <td th:text="${record.item}">Data</td>
-                <td th:text="${#numbers.formatCurrency({record.revenue})}">Data</td>
-                <td th:text="${#numbers.formatCurrency({record.cost})}">Data</td>
-                <td th:text="${#numbers.formatCurrency({record.revenue -record.cost})}">Data</td>
+            <tr th:each="record : ${records}" th:style="${record.revenue - record.cost >= 0} ? 'background: green': 'background: red'">
+                <td th:text="${record.item}">data</td>
+                <td th:text="${#numbers.formatCurrency(record.revenue)}">data</td>
+                <td th:text="${#numbers.formatCurrency(record.cost)}">data</td>
+                <td th:text="${#numbers.formatCurrency(record.revenue - record.cost)}">data</td>
             </tr>
         </table>
     </body>

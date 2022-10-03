@@ -3,6 +3,7 @@ package com.ltp.workbook;
 import java.math.BigDecimal;
 
 public class Record {
+
   private String item;
   private BigDecimal revenue;
   private BigDecimal cost;

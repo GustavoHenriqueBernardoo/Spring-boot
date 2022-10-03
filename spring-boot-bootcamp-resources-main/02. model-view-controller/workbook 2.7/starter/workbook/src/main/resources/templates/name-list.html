@@ -4,15 +4,18 @@
         <title>Name</title>
     </head>
     <body>
-        <p th:text="${name}" style="font-weight: bold"></p>
+        <h1 th:text="${name}"></h1>
+        <br />
         <ul>
-            <li th:text="${#strings.substring(name, 0, 1)}"></li>
-            <li th:text="${#strings.substring(name, 0, 2)}"></li>
-            <li th:text="${#strings.substring(name, 0, 3)}"></li>
-            <li th:text="${#strings.substring(name, 0, 4)}"></li>
-            <li th:text="${#strings.substring(name, 0, 5)}"></li>
-            <li th:text="${#strings.substring(name, 0, 6)}"></li>
-            <li th:text="${#strings.substring(name, 0, 7)}"></li>
+            <li th:text="${#strings.substring(name, 0, 1)}" style="font-weight: bold"></li>
+            <li th:text="${#strings.substring(name, 0, 2)}" style="font-weight: bold"></li>
+            <li th:text="${#strings.substring(name, 0, 3)}" style="font-weight: bold"></li>
+            <li th:text="${#strings.substring(name, 0, 4)}" style="font-weight: bold"></li>
+            <li th:text="${#strings.substring(name, 0, 5)}" style="font-weight: bold"></li>
+            <li th:text="${#strings.substring(name, 0, 6)}" style="font-weight: bold"></li>
+            <li th:text="${#strings.substring(name, 0, 7)}" style="font-weight: bold"></li>
+            <li th:text="${#strings.substring(name, 0, 8)}" style="font-weight: bold"></li>
+            <li th:text="${#strings.substring(name, 0, 9)}" style="font-weight: bold"></li>
         </ul>
     </body>
 </html>

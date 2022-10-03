@@ -20,7 +20,6 @@ public class WorkbookController {
 
     @GetMapping(value = "/")
     public String getSales(Model model) {
-
         model.addAttribute("records", records);
         return "records";
     }

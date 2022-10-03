@@ -35,13 +35,4 @@ public class Employee {
     this.role = role;
   }
 
-  @Override
-  public String toString() {
-    return "{" +
-        " name='" + getName() + "'" +
-        ", age='" + getAge() + "'" +
-        ", role='" + getRole() + "'" +
-        "}";
-  }
-
 }
