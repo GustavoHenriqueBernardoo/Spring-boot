@@ -24,7 +24,8 @@ public class GlobalController {
   }
 
   @GetMapping("/inventory")
-  public String getInventory() {
+  public String getInventory(Model model) {
+    model.addAttribute("items", items);
     return "inventory";
   }
 

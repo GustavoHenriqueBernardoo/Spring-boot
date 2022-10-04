@@ -19,12 +19,12 @@
                         <th>Order Date</th>
                         <th></th>
                     </tr>
-                    <tr>
-                        <td>Furniture</td>
-                        <td>Table</td>
-                        <td type="currency">2342.34</td>
-                        <td type="currency">1657.23</td>
-                        <td type="date">1996-02-02</td>
+                    <tr th:each="item : ${items}">
+                        <td th:text="${item.category}">Furniture</td>
+                        <td th:text="${item.name}">Table</td>
+                        <td th:text="${#numbers.formatCurrency(item.price)}">2342.34</td>
+                        <td th:text="${#numbers.formatCurrency(item.discount)}">1657.23</td>
+                        <td th:text="${#dates.format(item.date, 'yyyy-MM-dd')}" type="date">1996-02-02</td>
                         <td>
                             <a role="button" style="color: white; background-color: #263238" class="table-button">Update</a>
                         </td>
