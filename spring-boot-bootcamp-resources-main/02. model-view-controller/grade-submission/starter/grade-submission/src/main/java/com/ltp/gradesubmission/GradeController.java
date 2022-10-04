@@ -16,7 +16,7 @@ public class GradeController {
   @GetMapping("/")
   public String gradeForm(Model model, @RequestParam(required = false) String id) {
     int index = getGradeIndex(id);
-    model.addAttribute("grade", index == -1000 ? new Grade() : studentGrades.get(index));
+    model.addAttribute("grade", index == -1000 ? new Grade() : studentGrades.get(getGradeIndex(id)));
     return "form";
   }
 
