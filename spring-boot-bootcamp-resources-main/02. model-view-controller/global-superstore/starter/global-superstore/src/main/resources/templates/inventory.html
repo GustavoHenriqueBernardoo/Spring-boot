@@ -20,13 +20,20 @@
                         <th></th>
                     </tr>
                     <tr th:each="item : ${items}">
+                        <div th:if="${status == 'success'}" class="alert success">
+                            <strong> You successfully submitted the item! </strong>
+                        </div>
+
+                        <div th:if="${status == 'failed'}" class="alert">
+                            <strong> You failed to submit the item. </strong>
+                        </div>
                         <td th:text="${item.category}">Furniture</td>
                         <td th:text="${item.name}">Table</td>
                         <td th:text="${#numbers.formatCurrency(item.price)}">2342.34</td>
                         <td th:text="${#numbers.formatCurrency(item.discount)}">1657.23</td>
                         <td th:text="${#dates.format(item.date, 'yyyy-MM-dd')}" type="date">1996-02-02</td>
                         <td>
-                            <a role="button" style="color: white; background-color: #263238" class="table-button">Update</a>
+                            <a th:href="@{/(id = ${item.id})}" role="button" style="color: white; background-color: #263238" class="table-button">Update</a>
                         </td>
                     </tr>
                 </table>
