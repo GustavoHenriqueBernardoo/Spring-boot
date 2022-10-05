@@ -42,8 +42,8 @@ public class GlobalController {
   public String handleSubmit(Item item, RedirectAttributes redirectAttributes) {
 
     int index = getIndex(item.getId());
-
     String status = Constants.SUCCESS_STATUS;
+
     if (index == Constants.NOT_FOUND) {
       items.add(item);
     } else if (index == Constants.NOT_FOUND || within5Days(item.getDate(), items.get(index).getDate())) {

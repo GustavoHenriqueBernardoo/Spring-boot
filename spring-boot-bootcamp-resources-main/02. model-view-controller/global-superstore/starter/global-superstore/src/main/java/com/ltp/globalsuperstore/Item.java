@@ -15,14 +15,6 @@ public class Item {
   @DateTimeFormat(pattern = "yyyy-MM-dd")
   private Date date;
 
-  public Item(String category, String name, double price, double discount, Date date) {
-    this.category = category;
-    this.name = name;
-    this.price = price;
-    this.discount = discount;
-    this.date = date;
-  }
-
   public Item() {
     this.id = UUID.randomUUID().toString();
   }
