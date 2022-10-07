@@ -1,19 +1,24 @@
 package com.example.javagram;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 public class JavagramController {
 
-  User user = new User("Gustavo", "Bernardo", "GB", "gustavo.bernardo@gmail.com", null);
+  List<User> users = new ArrayList<>();
 
   @GetMapping("/")
   public String getForm(Model model) {
-    model.addAttribute("user", user);
+    model.addAttribute("user", new User());
     return "sign-up";
   }
 
@@ -23,8 +28,14 @@ public class JavagramController {
   }
 
   @PostMapping("/submitItem")
-  public String submitForm(User user) {
+  public String handleSubmit(@Valid User user, BindingResult result) {
     // TODO: process POST request
+
+    if (result.hasErrors()) {
+      return "sign-up";
+    }
+
+    users.add(user);
 
     return "redirect:/result";
   }
