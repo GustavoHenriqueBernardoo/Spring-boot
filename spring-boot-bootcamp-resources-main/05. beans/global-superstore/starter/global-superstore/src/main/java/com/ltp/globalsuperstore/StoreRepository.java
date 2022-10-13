@@ -3,8 +3,11 @@ package com.ltp.globalsuperstore;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
+@Repository
 public class StoreRepository {
-    
+
     private List<Item> items = new ArrayList<>();
 
     public Item getItem(int index) {
@@ -18,10 +21,9 @@ public class StoreRepository {
     public void updateItem(Item item, int index) {
         items.set(index, item);
     }
-    
+
     public List<Item> getItems() {
         return items;
     }
-
 
 }
