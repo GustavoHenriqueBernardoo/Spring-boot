@@ -2,8 +2,6 @@ package com.ltp.contacts.web;
 
 import java.util.List;
 
-import javax.swing.RepaintManager;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
