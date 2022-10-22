@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/student")
@@ -28,7 +27,7 @@ public class StudentController {
   @PostMapping("")
   public ResponseEntity<Student> saveStudent(@RequestBody Student student) {
 
-    return new ResponseEntity<>(HttpStatus.CREATED);
+    return new ResponseEntity<>(student, HttpStatus.CREATED);
   }
 
   @DeleteMapping("/{id}")
