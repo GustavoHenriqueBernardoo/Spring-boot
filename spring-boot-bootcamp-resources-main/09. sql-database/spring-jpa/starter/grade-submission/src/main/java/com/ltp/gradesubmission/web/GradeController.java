@@ -39,7 +39,7 @@ public class GradeController {
     @PutMapping("/student/{studentId}/course/{courseId}")
     public ResponseEntity<Grade> updateGrade(@RequestBody Grade grade, @PathVariable Long studentId,
             @PathVariable Long courseId) {
-        return new ResponseEntity<>(grade, HttpStatus.OK);
+        return new ResponseEntity<>(gradeService.updateGrade(grade.getScore(), studentId, courseId), HttpStatus.OK);
     }
 
     @DeleteMapping("/student/{studentId}/course/{courseId}")
