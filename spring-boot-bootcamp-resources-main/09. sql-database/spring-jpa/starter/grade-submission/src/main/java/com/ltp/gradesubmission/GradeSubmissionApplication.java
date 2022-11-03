@@ -7,8 +7,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.ltp.gradesubmission.entity.Course;
+import com.ltp.gradesubmission.entity.Grade;
 import com.ltp.gradesubmission.entity.Student;
 import com.ltp.gradesubmission.repository.CourseRepository;
+import com.ltp.gradesubmission.repository.GradeRepository;
 import com.ltp.gradesubmission.repository.StudentRepository;
 
 import lombok.AllArgsConstructor;
@@ -19,6 +21,7 @@ public class GradeSubmissionApplication implements CommandLineRunner {
 
 	StudentRepository studentRepository;
 	CourseRepository courseRepository;
+	GradeRepository gradeRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(GradeSubmissionApplication.class, args);
@@ -48,12 +51,24 @@ public class GradeSubmissionApplication implements CommandLineRunner {
 						"In this class, you will learn the art of changing the form or appearance of an object.")
 		};
 
+		Grade[] grades = new Grade[] {
+				new Grade(null, "A+", students[2], courses[0]),
+				new Grade(null, "D", students[1], courses[0]),
+				new Grade(null, "B", students[3], courses[0]),
+				new Grade(null, "A+", students[3], courses[1]),
+				new Grade(null, "B+", students[3], courses[2]),
+		};
+
 		for (int i = 0; i < students.length; i++) {
 			studentRepository.save(students[i]);
 		}
 
 		for (int i = 0; i < courses.length; i++) {
 			courseRepository.save(courses[i]);
+		}
+
+		for (int i = 0; i < grades.length; i++) {
+			gradeRepository.save(grades[i]);
 		}
 	}
 

@@ -32,7 +32,7 @@ public class Course {
     @NonNull
     private String subject;
 
-    @Column(name = "code", nullable = false)
+    @Column(name = "code", nullable = false, unique = true)
     @NonNull
     private String code;
 
